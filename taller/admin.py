@@ -1,3 +1,8 @@
 from django.contrib import admin
+from taller.models import Cliente, Reparacion
 
-# Register your models here.
+class clienteAdmin(admin.ModelAdmin):
+    list_display = ["nombre", "fecha_ingreso"]
+
+admin.site.register(Cliente, clienteAdmin)
+admin.site.register(Reparacion)
